@@ -1,0 +1,79 @@
+format = """
+$python\
+$directory\
+[\uE0B0](fg:#4c566a bg:#ffffff)\
+$git_branch\
+$git_status\
+[\uE0B0](fg:#ffffff)\
+\n$character"""
+
+[directory]
+style = "fg:#ffffff bg:#4c566a"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = ""
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Game" = "󰜃"
+
+[git_branch]
+symbol = ""
+style = "bg:#ffffff"
+format = '[[ $symbol $branch ](fg:#4c566a bg:#ffffff)]($style)'
+
+[git_status]
+style = "bg:#ffffff"
+format = '[[($all_status$ahead_behind )](fg:#4c566a bg:#ffffff)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#000000"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#000000)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[c]
+symbol = "󰙲"
+style = "bg:#000000"
+format = '[[ $symbol ($version) ](fg:#a2f396 bg:#000000)]($style)'
+detect_extensions = ['c','h','cpp','hpp']
+
+[python]
+style = "bg:#000000 fg:#7685a5"
+format = '[$symbol$pyenv_prefix(\($virtualenv\)) ]($style)'
+pyenv_version_name = true
+
+[localip]
+ssh_only = false
+format = '@[$localipv4](bold blue) '
+disabled = false
+
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#ff9fbb "
+format = '[[  $time ](fg:#ffffff bg:#ff9fbb )]($style)'
